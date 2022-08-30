@@ -26,13 +26,14 @@ class _MyAppState extends State<MyApp> {
           ],
         ),
         body: Container(
+          padding: EdgeInsets.all(10),
           color: Colors.blueGrey,
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(200),
-                child: Image.asset("images/taylor.jpg",height: 100,width: 100,),
+              CircleAvatar(
+                backgroundImage: AssetImage("images/taylor.jpg"),
+                radius: 50,
               ),
               Text(
                 "Taylor Watson",
