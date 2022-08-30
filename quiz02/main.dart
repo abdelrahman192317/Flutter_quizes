@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,103 +19,104 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blueGrey,
-          leading: Icon(Icons.arrow_back),
-          actions: [
-            Icon(Icons.add),
-            Icon(Icons.menu),
-          ],
+          elevation: 0,
+          backgroundColor: Colors.deepOrangeAccent,
+          leading: Icon(Icons.arrow_back_ios,color: Colors.black,),
         ),
-        body: Container(
-          color: Colors.blueGrey,
-          child: Column(
-            //mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(200),
-                child: Image.asset("images/taylor.jpg",height: 100,width: 100,),
-              ),
-              Text(
-                "Taylor Watson",
-                style: TextStyle(fontWeight: FontWeight.w200),
-              ),
-              Text(
-                "SOFTWARE DEVELOPER",
-                style: TextStyle(fontWeight: FontWeight.w700),
-              ),
-              Text(
-                "Create great Project",
-                style: TextStyle(fontWeight: FontWeight.w500),
-              ),
-              Text(
-                "@TwWorks",
-                style: TextStyle(fontWeight: FontWeight.w500),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Image.asset("images/twitter.png",height: 50,width: 50,),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Image.asset("images/meduium.png",height: 50,width: 50,),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Image.asset("images/linkedin.png",height: 50,width: 50,),
-                  ),
-                ],
-              ),
-              RaisedButton(
-                color: Colors.blue,
-                onPressed: (){},
-                child: Text(
-                  "Hire Me",
-                  style: TextStyle(color: Colors.white),
+        body: Column(
+          //mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: EdgeInsets.all(10),
+              alignment: Alignment.bottomLeft,
+              margin: EdgeInsets.only(bottom: 10),
+              color: Colors.deepOrangeAccent,
+              child: Text("Account Setting",style: TextStyle(fontWeight: FontWeight.bold),),
+              height: 70,width: double.infinity,
+            ),
+
+            Padding(padding: EdgeInsets.all(10),
+            child: Column(
+              children: [
+                CircleAvatar(
+                  backgroundImage: AssetImage("images/taylor.jpg",),
+                  radius: 50,
                 ),
-              ),
-              SizedBox(height: 20,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    children: [
-                      FloatingActionButton(onPressed: (){},
-                        child: Image.asset("images/dribble.png",),
-                      ),
-                      Padding(padding: EdgeInsets.all(10)),
-                      Text(
-                        "1.3K",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        "Followers",
-                        style: TextStyle(fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      FloatingActionButton(onPressed: (){},
-                        child: Image.asset("images/behance.png",),
-                      ),
-                      Padding(padding: EdgeInsets.all(10)),
-                      Text(
-                        "1.3K",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        "Followers",
-                        style: TextStyle(fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
+                Text(
+                  "Taylor Watson",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.w200),
+                ),
+
+                Text(
+                  "Edit Profile",
+                  textAlign: TextAlign.start,
+                  style: TextStyle(color: Colors.black38),
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          "Phone Number",
+                          style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black),
+                        ),
+                        Text(
+                          "01223456789",
+                          style: TextStyle(fontWeight: FontWeight.w100,color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                    IconButton(onPressed: (){}, icon: Icon(Icons.edit,color: Colors.black45,))
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          "Email",
+                          style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black),
+                        ),
+                        Text(
+                          "last@alb.com",
+                          style: TextStyle(fontWeight: FontWeight.w200,color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                    IconButton(onPressed: (){}, icon: Icon(Icons.edit,color: Colors.black45,))
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          "Password",
+                          style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black),
+                        ),
+                        Text(
+                          "************",
+                          style: TextStyle(fontWeight: FontWeight.w100,color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                    IconButton(onPressed: (){}, icon: Icon(Icons.edit,color: Colors.black45,))
+                  ],
+                ),
+                FlatButton(onPressed: (){}, child: Text(
+                  "Logout",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.red),
+                )),
+              ],
+            ),
+            )
+          ],
         ),
       ),
     );
